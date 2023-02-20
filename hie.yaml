@@ -1,0 +1,8 @@
+cradle:
+  cabal:
+    - path: "./src"
+      component: "lib:okasaki"
+    - path: "./test"
+      component: "okasaki:test"
+    - path: "./app"
+      component: "exe:okasaki"
