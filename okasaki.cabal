@@ -2,50 +2,21 @@ cabal-version: 2.2
 
 name:           okasaki
 version:        0.0.0.0
--- synopsis:       $synopsis
--- description:    $description
--- category:       $category
--- homepage:       $gitrepo#readme
--- bug-reports:    $gitrepo/issues
--- maintainer:     $maintainer
 build-type:     Simple
 
--- source-repository head
---   type: git
---   location: $gitrepo
-
 common common-opts
+  default-extensions:
+    TypeApplications
+    ScopedTypeVariables
   ghc-options:
     -Wall
     -threaded
     -rtsopts
     -with-rtsopts=-N
   build-depends:
-      base
-
-    -- Codecs
-    , aeson
-    , deriving-aeson
-    , binary
-
-    -- Parallelism
-    , async
-
-    -- Mutability
-    , primitive
-
-    -- Binary
-    , bytestring
-    , vector
-
-    -- Containers
+      base >= 4.17.0.0
     , containers
     , unordered-containers
-
-    -- Utilities
-    , text
-    , foldl
-    , safe-exceptions
 
   default-language: Haskell2010
 
@@ -53,7 +24,7 @@ common common-opts
 library
   import: common-opts
   exposed-modules:
-      Core
+      Persistence
   hs-source-dirs:
       src
 
