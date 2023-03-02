@@ -1,6 +1,9 @@
 module Main where
 
-import Prelude
+import Criterion.Main ( defaultMain )
+import Chapter2 ( ch2Group )
 
 main :: IO ()
-main = putStrLn "Hello world"
+main = defaultMain
+  [ ch2Group
+  ]

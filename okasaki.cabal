@@ -8,15 +8,12 @@ common common-opts
   default-extensions:
     TypeApplications
     ScopedTypeVariables
-  ghc-options:
-    -Wall
-    -threaded
-    -rtsopts
-    -with-rtsopts=-N
+    NumericUnderscores
   build-depends:
       base >= 4.17.0.0
     , containers
     , unordered-containers
+    , criterion
 
   default-language: Haskell2010
 
@@ -24,18 +21,22 @@ common common-opts
 library
   import: common-opts
   exposed-modules:
-      Persistence
+      Chapter2
   hs-source-dirs:
       src
 
 executable okasaki
   import: common-opts
   main-is: Main.hs
-  exposed-modules:
-      Main
   hs-source-dirs:
-      app
-  build-depends: okasaki
+    app
+  build-depends:
+    okasaki
+  ghc-options:
+    -Wall
+    -threaded
+    -rtsopts
+    -with-rtsopts=-N
 
 test-suite test
   import: common-opts
